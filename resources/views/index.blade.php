@@ -311,6 +311,7 @@
                                         <p class="item-intro text-muted">{{ $producto->concepto }}</p>
                                         <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial2.png" alt="..." />
                                         <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial3.png" alt="..." />
+                                        <p>{{ $producto->descripcion }}</p>
                                         <ul class="list-inline">
                                             <li>
                                                 <strong>Servicio:</strong>

@@ -27,7 +27,7 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        return view('createProducto');
+        return view('producto.createProducto');
     }
 
     /**
@@ -38,7 +38,27 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => ['required', 'string', 'max:255', 'min:5'],
+            'concepto' => ['required', 'string', 'max:255', 'min:5'],
+            'descripcion' => ['required', 'string', 'min:5'],
+            'servicio' => ['required', 'string', 'max:255', 'min:5'],
+            'precio' => ['required', 'numeric', 'min:1']
+        ]);
+
+        // dd($request->all());
+
+        $producto = new Producto();
+
+        $producto->nombre = $request->nombre;
+        $producto->concepto = $request->concepto;
+        $producto->descripcion = $request->descripcion;
+        $producto->servicio = $request->servicio;
+        $producto->precio = $request->precio;
+        
+        $producto->save();
+
+        return redirect('/producto');
     }
 
     /**

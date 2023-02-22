@@ -44,55 +44,50 @@
                     <h2 class="section-heading text-uppercase">Crear producto</h2>
                 </div>
                 
-                <form action="" method="POST" id="" data-sb-form-api-token="API_TOKEN">
+                <form action="/producto" method="POST">
+                    @csrf
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Nombre input-->
-                                <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre del producto *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="nombre:required">Nombre requerido.</div>
+                                <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre del producto *" />
                             </div>
 
                             <div class="form-group">
                                 <!-- Concepto input-->
-                                <input class="form-control" id="concepto" name="concepto" type="text" placeholder="Concepto del producto *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="concepto:required">Concepto requerido.</div>
+                                <input class="form-control" id="concepto" name="concepto" type="text" placeholder="Concepto del producto *" />
                             </div>
                             
-                            <div class="form-group">
-                                <!-- Servicio input-->
+                            <!-- <div class="form-group">
                                 <input class="form-control" id="servicio" name="servicio" type="text" placeholder="Servicio del producto *" data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="servicio:required">Servicio requerido.</div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <!-- Servicio input-->
                                 <select class="form-control" id="servicio" name="servicio">
                                     <option value="" hidden>Servicio del producto *</option>
-                                    <option value="fmasmestudio">F+M estudio</option>
-                                    <option value="librettura">Librettura</option>
-                                    <option value="concrettura">Concrettura</option>
+                                    <option value="F+M estudio">F+M estudio</option>
+                                    <option value="Librettura">Librettura</option>
+                                    <option value="Concrettura">Concrettura</option>
                                 </select>
-                                <div class="invalid-feedback" data-sb-feedback="servicio:required">Servicio requerido.</div>
                             </div>
 
                             <div class="form-group">
                                 <!-- Precio input-->
-                                <input class="form-control" id="precio" name="precio" type="number" placeholder="Precio del producto *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="precio:required">Precio requerido.</div>
+                                <input class="form-control" id="precio" name="precio" type="text" placeholder="Precio del producto *" />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Descripcion input-->
-                                <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción del producto *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="descripcion:required">Descripción requerida.</div>
+                                <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción del producto *" ></textarea>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" value="Enviar">Crear Producto</button></div>
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Crear Producto</button></div>
                 </form>
             </div>
         </section>
