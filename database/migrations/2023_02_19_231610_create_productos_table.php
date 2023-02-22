@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 255);
             $table->text('concepto');
-            $table->json('imagenes');
+            $table->json('imagenes')->nullable();
             $table->text('descripcion');
             $table->string('servicio', 255);
             $table->float('precio', 8, 2);

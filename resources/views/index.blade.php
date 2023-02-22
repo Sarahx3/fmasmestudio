@@ -87,96 +87,23 @@
                     <h3 class="section-subheading text-muted">Nuestros trabajos son tus sueños hechos realidad.</h3>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    @foreach($productos as $producto)
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <!-- Portfolio item -->
+                            <div class="portfolio-item">
+                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{ $producto->id }}">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid" src="assets/img/portfolio/residencial1.png" alt="..." />
+                                </a>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-heading">{{ $producto->nombre }}</div>
+                                    <div class="portfolio-caption-subheading text-muted">{{ $producto->servicio }}</div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/residencial1.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Arquitectura residencial</div>
-                                <div class="portfolio-caption-subheading text-muted">F+M estudio</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/comercial1.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Arquitectura comercial</div>
-                                <div class="portfolio-caption-subheading text-muted">F+M estudio</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/construccion1.JPG" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Construcción</div>
-                                <div class="portfolio-caption-subheading text-muted">F+M estudio</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/libreta1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Libreta personalizada</div>
-                                <div class="portfolio-caption-subheading text-muted">Librettura</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/di1.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Diseño interior</div>
-                                <div class="portfolio-caption-subheading text-muted">F+M estudio</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/maceta.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Creaciones en concreto</div>
-                                <div class="portfolio-caption-subheading text-muted">Concrettura</div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -369,217 +296,44 @@
             </div>
         </footer>
         <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Arquitectura residencial</h2>
-                                    <p class="item-intro text-muted">Creamos ambientes donde se transmite la calidez de un hogar.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial2.png" alt="..." />
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial3.png" alt="..." />
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Servicio:</strong>
-                                            Arquitectura, diseño interior y construcción
-                                        </li>
-                                        <li>
-                                            <strong>Realizado por:</strong>
-                                            F+M estudio
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+        <!-- Portfolio item modal popup-->
+        @foreach($productos as $producto)
+            <div class="portfolio-modal modal fade" id="portfolioModal{{ $producto->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="modal-body">
+                                        <!-- Project details-->
+                                        <h2 class="text-uppercase">{{ $producto->nombre }}</h2>
+                                        <p class="item-intro text-muted">{{ $producto->concepto }}</p>
+                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial2.png" alt="..." />
+                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial3.png" alt="..." />
+                                        <ul class="list-inline">
+                                            <li>
+                                                <strong>Servicio:</strong>
+                                                {{ $producto->servicio }}
+                                            </li>
+                                            <li>
+                                                <strong>Precio:</strong>
+                                                {{ $producto->precio }}
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                            <i class="fas fa-xmark me-1"></i>
+                                            Cerrar producto
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Arquitectura comercial</h2>
-                                    <p class="item-intro text-muted">Establecemos un equilibrio entre la belleza, funcionalidad y habitabilidad de tu espacio comercial.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/comercial2.png" alt="..." />
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/comercial3.png" alt="..." />
-                                    
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Servicio:</strong>
-                                            Arquitectura, diseño interior y construcción
-                                        </li>
-                                        <li>
-                                            <strong>Realizado por:</strong>
-                                            F+M estudio
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Construcción</h2>
-                                    <p class="item-intro text-muted">Nos dedicamos a hacer obras duraderas, ya sea nuevas o remodeladas.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/construccion2.JPG" alt="..." />
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/construccion3.JPG" alt="..." />
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Servicio:</strong>
-                                            Arquitectura, diseño interior y construcción
-                                        </li>
-                                        <li>
-                                            <strong>Realizado por:</strong>
-                                            F+M estudio
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 4 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Libreta personalizada</h2>
-                                    <p class="item-intro text-muted">Personaliza tus libretas en la forma y tamaño que necesites.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/libreta2.jpg" alt="..." />
-                                    <p>Libreta personalizada tamaño media carta con portadas de madera. Cuenta con hojas de dibujo, raya o cuadro. Puede ser una imagen de personas (opción a con rostro o sin rostro), artista favorito, iniciales, equipo preferido o lo que puedas imaginar!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Servicio:</strong>
-                                            Diseño personalizado
-                                        </li>
-                                        <li>
-                                            <strong>Realizado por:</strong>
-                                            Librettura
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 5 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Diseño interior</h2>
-                                    <p class="item-intro text-muted">Creamos tu espacio atractivo, funcional y seguro.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/di2.png" alt="..." />
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/di3.png" alt="..." />
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Servicio:</strong>
-                                            Arquitectura, diseño interior y construcción
-                                        </li>
-                                        <li>
-                                            <strong>Realizado por:</strong>
-                                            F+M estudio
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 6 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{ asset('assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Creación en concreto</h2>
-                                    <p class="item-intro text-muted">Recuerdos originales con creaciones geniales.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/vela.jpg" alt="..." />
-                                    <p>Macetita Sidney. Macetita Mónaco. Macetita Amsterdam. Vela Valladolid.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Servicio:</strong>
-                                            Creación en concreto
-                                        </li>
-                                        <li>
-                                            <strong>Realizado por:</strong>
-                                            Concrettura
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
+        
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
