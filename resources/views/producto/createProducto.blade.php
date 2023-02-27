@@ -38,13 +38,13 @@
         </nav>
 
         <!-- FORMULARIO-->
-        <section class="page-section" id="miForm">
+        <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Crear producto</h2>
                 </div>
                 
-                <form action="/producto" method="POST">
+                <form action="/producto" method="POST" id="contactForm">
                     @csrf
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
