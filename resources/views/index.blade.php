@@ -309,6 +309,7 @@
                                         <!-- Project details-->
                                         <h2 class="text-uppercase">{{ $producto->nombre }}</h2>
                                         <p class="item-intro text-muted">{{ $producto->concepto }}</p>
+                                        <a href="/producto/{{ $producto->id }}/edit">Modificar</a>
                                         <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial2.png" alt="..." />
                                         <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial3.png" alt="..." />
                                         <p>{{ $producto->descripcion }}</p>
