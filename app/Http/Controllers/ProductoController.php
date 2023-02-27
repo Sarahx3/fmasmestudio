@@ -58,7 +58,7 @@ class ProductoController extends Controller
         
         $producto->save();
 
-        return redirect('/producto');
+        return redirect('/');
     }
 
     /**
