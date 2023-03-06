@@ -310,6 +310,7 @@
                                         <h2 class="text-uppercase">{{ $producto->nombre }}</h2>
                                         <p class="item-intro text-muted">{{ $producto->concepto }}</p>
                                         <a href="/producto/{{ $producto->id }}/edit">Modificar</a>
+                                        
                                         <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial2.png" alt="..." />
                                         <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/residencial3.png" alt="..." />
                                         <p>{{ $producto->descripcion }}</p>
@@ -327,6 +328,15 @@
                                             <i class="fas fa-xmark me-1"></i>
                                             Cerrar producto
                                         </button>
+                                        <br>
+                                        <form action="{{ route('producto.destroy', $producto) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                            <i class="fas fa-xmark me-1"></i>
+                                            Eliminar producto
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
